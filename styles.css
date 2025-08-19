@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.click-me {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.hello-you {
+    color: #0ff;
+    font-size: 0;
+    opacity: 0;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    text-shadow: 0 0 10px #0ff;
+    transition: all 0.5s ease;
+}
+
+.show-hello {
+    font-size: 4rem;
+    opacity: 1;
+    animation: glow 1.5s infinite alternate, zoomIn 0.8s ease-out;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+    to {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .click-me {
+        font-size: 2rem;
+    }
+    .show-hello {
+        font-size: 2.5rem;
+    }
+}
